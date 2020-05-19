@@ -1,4 +1,6 @@
 var express = require('express');
+var port = 5000 || process.env.PORT;
+
 var app = express();
 
 
@@ -8,9 +10,9 @@ app.get('/', function (req, res) {
     res.sendFile( __dirname + "/" + "digitclassifier.html" );
 })
 
-var server = app.listen(3000, function () {
+var server = app.listen(port, function () {
    var host = server.address().address
-   var port = server.address().port
+   
 
    console.log("Example app listening at http://%s:%s", host, port)
 })
